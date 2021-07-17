@@ -3,6 +3,7 @@ import 'package:mysj/widgets/custom_view.dart';
 import 'package:mysj/widgets/home_latest_news.dart';
 import 'package:mysj/widgets/home_welcome_text.dart';
 import 'package:mysj/widgets/home_quick_actions.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
   final void Function() newCasesCallback;
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
           name: "Bryan",
           nearCases: 23,
           newCasesButton: newCasesCallback,
-          mcoButton: () {}),
+          mcoButton:  () =>launch('https://www.mkn.gov.my/web/ms/sop-perintah-kawalan-pergerakan/'),),
       Padding(
           padding: EdgeInsets.only(top: 25.0),
           child: Container(
