@@ -22,7 +22,7 @@ class ProfileCard extends StatelessWidget {
                 blurRadius: 10.0,
                 spreadRadius: 1.0,
                 offset: Offset(0.0, 3.0),
-                color: Color.fromRGBO(0, 0, 0, 0.24))
+                color: Color.fromRGBO(0, 0, 0, 0.7))
           ]),
       child: Column(
         children: <Widget>[
@@ -31,12 +31,13 @@ class ProfileCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(right: 12.0),
-                width: 95.0,
-                height: 115.0,
-                decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(10.0)),
+                margin: EdgeInsets.only(right: 25.0),
+                child: CircleAvatar(
+                  radius: 50.0,
+                  backgroundImage: NetworkImage(
+                      "https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg"),
+                  backgroundColor: Colors.transparent,
+                ),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -44,100 +45,50 @@ class ProfileCard extends StatelessWidget {
                 children: <Widget>[
                   Text("Soong Jun Shen",
                       style: TextStyle(fontSize: 20.0, height: 1.4)),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text("MySJ ID",
-                                style: TextStyle(
-                                    color: Color(0xff757575),
-                                    fontSize: 11.5,
-                                    height: 1.6)),
-                            Padding(
-                              padding: EdgeInsets.only(top: 3.0),
-                              child: Text("60137475869"),
-                            ),
-                            Text("IC/Passport No.",
-                                style: TextStyle(
-                                    color: Color(0xff757575),
-                                    fontSize: 11.5,
-                                    height: 1.8)),
-                            Padding(
-                              padding: EdgeInsets.only(top: 3.0),
-                              child: Text("050804251896"),
-                            ),
-                          ]),
-                      Padding(
-                        padding: EdgeInsets.only(left: 28.0, top: 5.0),
-                        child: Icon(
-                          Icons.qr_code_scanner_rounded,
-                          color: Color(0xff303030),
-                          size: 40.0,
+                  Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text("IC/Passport No.",
+                            style: TextStyle(
+                                color: Color(0xff757575),
+                                fontSize: 11.5,
+                                height: 1.8)),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3.0),
+                          child: Text("050804251896"),
                         ),
-                      )
-                    ],
-                  )
+                        Text("MySej ID",
+                            style: TextStyle(
+                                color: Color(0xff757575),
+                                fontSize: 11.5,
+                                height: 1.6)),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3.0),
+                          child: Text("60137475869"),
+                        ),
+                      ])
                 ],
               ),
             ],
           ),
           SizedBox(height: 12.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Text("Risk Status",
-                      style: TextStyle(
-                          color: Color(0xff757575),
-                          fontSize: 11.5,
-                          height: 1.8)),
-                  Container(
-                    alignment: Alignment.center,
-                    width: 110.0,
-                    height: 28.0,
-                    decoration: BoxDecoration(
-                        color: riskColors[riskStatus],
-                        borderRadius: BorderRadius.circular(50.0)),
-                    child: Transform.translate(
-                      offset: Offset(0, 1.0),
-                      child: Text(
-                        riskLabels[riskStatus],
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
-                      ),
-                    ),
-                  )
-                ],
+          Text("Risk Status",
+              style: TextStyle(
+                  color: Color(0xff757575), fontSize: 11.5, height: 1.8)),
+          Container(
+            alignment: Alignment.center,
+            width: 110.0,
+            height: 28.0,
+            decoration: BoxDecoration(
+                color: riskColors[riskStatus],
+                borderRadius: BorderRadius.circular(50.0)),
+            child: Transform.translate(
+              offset: Offset(0, 1.0),
+              child: Text(
+                riskLabels[riskStatus],
+                style: TextStyle(color: Colors.white, fontSize: 14.0),
               ),
-              Column(
-                children: <Widget>[
-                  Text("Vaccination Status",
-                      style: TextStyle(
-                          color: Color(0xff757575),
-                          fontSize: 11.5,
-                          height: 1.8)),
-                  Container(
-                    alignment: Alignment.center,
-                    width: 150.0,
-                    height: 28.0,
-                    decoration: BoxDecoration(
-                        color: (vaccine == null) ? Colors.grey : Colors.green,
-                        borderRadius: BorderRadius.circular(50.0)),
-                    child: Transform.translate(
-                      offset: Offset(0, 1.0),
-                      child: Text(
-                        (vaccine == null)
-                            ? "UNVACCINATED"
-                            : vaccine!.toUpperCase(),
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
-                      ),
-                    ),
-                  )
-                ],
-              )
-            ],
+            ),
           )
         ],
       ),

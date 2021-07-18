@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mysj/data/pandemic_data.dart';
-import 'package:mysj/pages/alerts.dart';
 import 'package:mysj/pages/profile.dart';
 import 'package:mysj/pages/questions.dart';
 import 'package:mysj/pages/statistics.dart';
@@ -43,7 +42,7 @@ class AppHome extends StatefulWidget {
 class _AppHomeState extends State<AppHome> {
   static var pages = <Widget>[];
 
-  static var _currentPageIndex = 0;
+  // static var _currentPageIndex = 0;
   static var pandemicData;
 
   void initState() {
@@ -57,11 +56,7 @@ class _AppHomeState extends State<AppHome> {
 
     pages = [
       HomePage(
-        newCasesCallback: () {
-          setState(() {
-            _currentPageIndex = 3;
-          });
-        },
+        newCasesCallback: () {},
         quickActionsCallbacks: [
           () {
             Navigator.pushNamed(context, '/assesment');
@@ -71,14 +66,17 @@ class _AppHomeState extends State<AppHome> {
           () {}
         ],
       ),
-      AlertsPage(
-        callback: () {
-          Navigator.pushNamed(context, '/assesment');
-        },
-      ),
       StatisticsPage(data: pandemicData),
       ProfilePage()
     ];
+  }
+
+   int _selectedPageIndex = 0;
+
+    void _selectPage(int index) {
+    setState(() {
+      _selectedPageIndex = index;
+    });
   }
 
   void dispose() {
@@ -91,9 +89,7 @@ class _AppHomeState extends State<AppHome> {
       color: Colors.white,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: (_currentPageIndex > 2)
-            ? pages[_currentPageIndex - 1]
-            : pages[_currentPageIndex],
+        body: pages[_selectedPageIndex],
         bottomNavigationBar: BottomAppBar(
           shape: CircularNotchedRectangle(),
           child: BottomNavigationBar(
@@ -101,13 +97,8 @@ class _AppHomeState extends State<AppHome> {
             backgroundColor: Colors.transparent,
             type: BottomNavigationBarType.fixed,
             items: bottomNavigationBarItems(),
-            currentIndex: _currentPageIndex,
-            onTap: (int pageIndex) {
-              if (pageIndex == 2) return;
-              setState(() {
-                _currentPageIndex = pageIndex;
-              });
-            },
+            currentIndex: _selectedPageIndex,
+            onTap: _selectPage
           ),
         ),
         floatingActionButton: FloatingActionButton(
