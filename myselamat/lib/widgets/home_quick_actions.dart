@@ -66,8 +66,9 @@ class QuickActions extends StatelessWidget {
                   quickActionsCallbacks[0]),
               ActionButton(Icons.location_on, "Hotspots", Colors.orangeAccent,
                   quickActionsCallbacks[1]),
-              ActionButton(Icons.history, "Travel History", Colors.green,
-                  quickActionsCallbacks[2])
+              ActionButton(Icons.history, "Travel History", Colors.green, () {
+                Navigator.pushNamed(context, "/travelhistory");
+              })
             ],
           ),
         )
