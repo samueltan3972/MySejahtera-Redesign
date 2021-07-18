@@ -56,7 +56,7 @@ class _AppHomeState extends State<AppHome> {
 
     pages = [
       HomePage(
-        newCasesCallback: () {},
+        // newCasesCallback: () {},
         quickActionsCallbacks: [
           () {
             Navigator.pushNamed(context, '/assesment');

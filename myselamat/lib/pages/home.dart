@@ -6,18 +6,20 @@ import 'package:mysj/widgets/home_quick_actions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
-  final void Function() newCasesCallback;
+  // final void Function() newCasesCallback;
   final List<void Function()> quickActionsCallbacks;
 
   HomePage(
-      {required this.newCasesCallback, required this.quickActionsCallbacks});
+      {
+        // required this.newCasesCallback, 
+        required this.quickActionsCallbacks});
 
   Widget build(BuildContext context) {
     return CustomView(height: 400.0, children: <Widget>[
       WelcomeBox(
           name: "Bryan",
           nearCases: 23,
-          newCasesButton: newCasesCallback,
+          newCasesButton: (){},
           mcoButton:  () =>launch('https://www.mkn.gov.my/web/ms/sop-perintah-kawalan-pergerakan/'),),
       Padding(
           padding: EdgeInsets.only(top: 25.0),
