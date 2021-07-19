@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mysj/widgets/custom_icons.dart';
 
 class QuickActions extends StatelessWidget {
   final List<void Function()> quickActionsCallbacks;
@@ -67,10 +66,9 @@ class QuickActions extends StatelessWidget {
                   quickActionsCallbacks[0]),
               ActionButton(Icons.location_on, "Hotspots", Colors.orangeAccent,
                   quickActionsCallbacks[1]),
-              ActionButton(Icons.question_answer, "FAQs", Color(0xff7a43f1),
-                  quickActionsCallbacks[2]),
-              ActionButton(CustomIcons.syringe, "Vaccination", Colors.green,
-                  quickActionsCallbacks[3])
+              ActionButton(Icons.history, "Travel History", Colors.green, () {
+                Navigator.pushNamed(context, "/travelhistory");
+              })
             ],
           ),
         )

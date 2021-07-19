@@ -19,7 +19,7 @@ class CustomView extends StatelessWidget {
                 gradient: LinearGradient(
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
-                    colors: [Color(0xff4b7cfe), Color(0xff699efc)])),
+                    colors: [ Color.fromRGBO(54, 218, 255, 1),Color.fromRGBO(3, 57, 252, 1)])),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,7 +28,7 @@ class CustomView extends StatelessWidget {
                 title: Padding(
                   padding: EdgeInsets.only(top: 45.0),
                   child: Text(
-                    "mysejahtera",
+                    "MySelamat",
                     style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'MazzardH-Bold',
