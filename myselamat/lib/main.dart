@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mysj/pages/hotspot.dart';
 import 'package:mysj/pages/profile.dart';
 import 'package:mysj/pages/questions.dart';
 import 'package:mysj/pages/home.dart';
@@ -6,6 +7,7 @@ import 'package:mysj/data/question_sets.dart';
 import 'package:mysj/pages/travelhistory.dart';
 import 'package:mysj/widgets/bottom_nav_bar_items.dart';
 import 'package:flutter/services.dart';
+import 'package:mysj/widgets/checkin.dart';
 
 void main() => runApp(App());
 
@@ -22,6 +24,7 @@ class App extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => AppHome(),
+        "/hotspot":(context) => Hotspot(),
         "/travelhistory": (context) => TravelHistory(),
         "/assesment": (context) => QuestionsPage(
               title: "Questions",
@@ -102,7 +105,7 @@ class _AppHomeState extends State<AppHome> {
           ),
           backgroundColor: Color(0xff4f8eff),
           foregroundColor: Colors.white,
-          onPressed: () => {print("pressed")},
+          onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>CheckIn())),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
