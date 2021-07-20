@@ -25,6 +25,9 @@ dependencies:
     sdk: flutter
   fl_chart: ^0.36.1
   url_launcher: ^6.0.9
+  dropdown_search: ^0.6.3
+  location: ^4.3.0
+  google_maps_flutter: ^2.0.6
   
 
 
