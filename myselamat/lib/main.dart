@@ -8,8 +8,14 @@ import 'package:mysj/pages/travelhistory.dart';
 import 'package:mysj/widgets/bottom_nav_bar_items.dart';
 import 'package:flutter/services.dart';
 import 'package:mysj/widgets/checkin.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 
-void main() => runApp(App());
+void main() {
+  //WidgetsFlutterBinding.ensureInitialized();
+  //final FirebaseApp firebaseApp = await Firebase.initializeApp();
+  runApp(App());
+}
 
 class App extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -24,7 +30,7 @@ class App extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => AppHome(),
-        "/hotspot":(context) => Hotspot(),
+        "/hotspot": (context) => Hotspot(),
         "/travelhistory": (context) => TravelHistory(),
         "/assesment": (context) => QuestionsPage(
               title: "Questions",
@@ -37,7 +43,11 @@ class App extends StatelessWidget {
 }
 
 class AppHome extends StatefulWidget {
-  AppHome({Key? key}) : super(key: key);
+  AppHome({
+    Key? key,
+  }) : super(key: key);
+
+  // final FirebaseApp app;
 
   _AppHomeState createState() => _AppHomeState();
 }
@@ -45,14 +55,16 @@ class AppHome extends StatefulWidget {
 class _AppHomeState extends State<AppHome> {
   static var pages = <Widget>[];
 
-
   void initState() {
     super.initState();
 
+    // Firebase sample
+    final DatabaseReference db = FirebaseDatabase.instance.reference();
+    db.child("sample").set('sample writing');
+    db.child('sample').once().then((result) => print('result = $result'));
+
     // Hide Android Status Bar and Navigation Bar
     SystemChrome.setEnabledSystemUIOverlays([]);
-
-    
 
     pages = [
       HomePage(
@@ -105,7 +117,8 @@ class _AppHomeState extends State<AppHome> {
           ),
           backgroundColor: Color(0xff4f8eff),
           foregroundColor: Colors.white,
-          onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>CheckIn())),
+          onPressed: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (ctx) => CheckIn())),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),

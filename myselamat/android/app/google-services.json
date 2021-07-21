@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "464352501983",
+    "firebase_url": "https://myselamat-690ee-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "myselamat-690ee",
+    "storage_bucket": "myselamat-690ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464352501983:android:ba3f76effe9180d840896a",
+        "android_client_info": {
+          "package_name": "com.example.myselamat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464352501983-roh59c6hr15452cjqmja2hlv472ep7dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjCySn3XYqB0l4Q6fV7E9tVBGhLs7-YHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464352501983-roh59c6hr15452cjqmja2hlv472ep7dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

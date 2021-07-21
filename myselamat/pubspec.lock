@@ -71,6 +71,41 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  firebase:
+    dependency: "direct main"
+    description:
+      name: firebase
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "9.0.1"
+  firebase_core:
+    dependency: transitive
+    description:
+      name: firebase_core
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.4.0"
+  firebase_core_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_core_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.1"
+  firebase_core_web:
+    dependency: transitive
+    description:
+      name: firebase_core_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
+  firebase_database:
+    dependency: "direct main"
+    description:
+      name: firebase_database
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "7.1.2"
   fl_chart:
     dependency: "direct main"
     description:
@@ -114,6 +149,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.13.3"
   http_parser:
     dependency: transitive
     description:
