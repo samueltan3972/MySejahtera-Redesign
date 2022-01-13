@@ -1,7 +1,7 @@
-# MySejahtera Redesign
-MySejahtera Redesign - UTAR assignment. Developed with Flutter and Firebase.
+<h1 align="center"> MySejahtera Redesign</h1>
+<p align="center">MySejahtera Redesign - UTAR assignment. Developed with Flutter and Firebase.</p>
 
-This is assignment for UCCC2513 Mini Project with design idea reference from [https://github.com/vrevolverrr/mysejahtera](https://github.com/vrevolverrr/mysejahtera)
+<p align="center">This is assignment for UCCC2513 Mini Project with design idea reference from <a href="https://github.com/vrevolverrr/mysejahtera">https://github.com/vrevolverrr/mysejahtera</a></p>
 
 <p align="center">
     <img src="img/main.jpg" height="400">
