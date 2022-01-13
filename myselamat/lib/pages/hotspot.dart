@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mysj/widgets/mapcard.dart';
+import 'package:location/location.dart';
+import 'package:myselamat/widgets/mapcard.dart';
 
 class Hotspot extends StatelessWidget {
-  static const routename= '/hotspot';
+  final LocationData locationData;
+  Hotspot(this.locationData);
+
+  static const routename = '/hotspot';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +19,7 @@ class Hotspot extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: MapCard(
-              riskStatus: 0,
+              location: locationData,
             ),
           )
         ],

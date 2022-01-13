@@ -1,34 +1,62 @@
 {
   "project_info": {
-    "project_number": "464352501983",
-    "firebase_url": "https://myselamat-690ee-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "myselamat-690ee",
-    "storage_bucket": "myselamat-690ee.appspot.com"
+    "project_number": "217176843270",
+    "project_id": "test-cd013",
+    "storage_bucket": "test-cd013.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:464352501983:android:ba3f76effe9180d840896a",
+        "mobilesdk_app_id": "1:217176843270:android:8c3a30d3fbc8566e818f87",
         "android_client_info": {
-          "package_name": "com.example.myselamat"
+          "package_name": "com.example.hotspot"
         }
       },
       "oauth_client": [
         {
-          "client_id": "464352501983-roh59c6hr15452cjqmja2hlv472ep7dj.apps.googleusercontent.com",
+          "client_id": "217176843270-difnaom19lj4hpdbbbc7le8n8ba54gi2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDjCySn3XYqB0l4Q6fV7E9tVBGhLs7-YHw"
+          "current_key": "AIzaSyBl9nBawWSTFPjvsCVjaisZdPPU0Zlweiw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "464352501983-roh59c6hr15452cjqmja2hlv472ep7dj.apps.googleusercontent.com",
+              "client_id": "217176843270-difnaom19lj4hpdbbbc7le8n8ba54gi2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217176843270:android:6cccf5fe426b9ba2818f87",
+        "android_client_info": {
+          "package_name": "com.example.myselamat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217176843270-difnaom19lj4hpdbbbc7le8n8ba54gi2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl9nBawWSTFPjvsCVjaisZdPPU0Zlweiw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217176843270-difnaom19lj4hpdbbbc7le8n8ba54gi2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

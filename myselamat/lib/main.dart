@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:mysj/pages/hotspot.dart';
-import 'package:mysj/pages/profile.dart';
-import 'package:mysj/pages/questions.dart';
-import 'package:mysj/pages/home.dart';
-import 'package:mysj/data/question_sets.dart';
-import 'package:mysj/pages/travelhistory.dart';
-import 'package:mysj/widgets/bottom_nav_bar_items.dart';
 import 'package:flutter/services.dart';
-import 'package:mysj/widgets/checkin.dart';
+import 'package:myselamat/admin/update_news.dart';
+import 'package:myselamat/authentication/wrapper.dart';
+import 'package:myselamat/pages/profile.dart';
+import 'package:myselamat/pages/home.dart';
+import 'package:myselamat/pages/qrScan.dart';
+import 'package:myselamat/pages/travelhistory.dart';
+import 'package:myselamat/widgets/bottom_nav_bar_items.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
 
-void main() {
-  //WidgetsFlutterBinding.ensureInitialized();
-  //final FirebaseApp firebaseApp = await Firebase.initializeApp();
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(App());
 }
 
@@ -22,21 +21,16 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'MySelamat',
       theme: ThemeData(
+          primaryColor: Color.fromARGB(255, 76, 123, 237),
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
-          primarySwatch: Colors.lightBlue,
+          primarySwatch: Theme.of(context).primaryColor,
           fontFamily: 'MazzardH-SemiBold'),
       debugShowCheckedModeBanner: false,
-      initialRoute: "/",
+      home: Wrapper(),
       routes: {
-        "/": (context) => AppHome(),
-        "/hotspot": (context) => Hotspot(),
         "/travelhistory": (context) => TravelHistory(),
-        "/assesment": (context) => QuestionsPage(
-              title: "Questions",
-              subtitle: "Daily Health Assessment",
-              questions: healthAssessmentQuestionSet(),
-            )
+        UpdateNews.routeName:(context)=> UpdateNews(),
       },
     );
   }
@@ -44,10 +38,8 @@ class App extends StatelessWidget {
 
 class AppHome extends StatefulWidget {
   AppHome({
-    Key? key,
+    Key key,
   }) : super(key: key);
-
-  // final FirebaseApp app;
 
   _AppHomeState createState() => _AppHomeState();
 }
@@ -58,26 +50,10 @@ class _AppHomeState extends State<AppHome> {
   void initState() {
     super.initState();
 
-    // Firebase sample
-    final DatabaseReference db = FirebaseDatabase.instance.reference();
-    db.child("sample").set('sample writing');
-    db.child('sample').once().then((result) => print('result = $result'));
-
     // Hide Android Status Bar and Navigation Bar
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
 
-    pages = [
-      HomePage(
-        quickActionsCallbacks: [
-          () {
-            Navigator.pushNamed(context, '/assesment');
-          },
-          () {},
-          () {},
-        ],
-      ),
-      ProfilePage()
-    ];
+    pages = [HomePage(), ProfilePage()];
   }
 
   int _selectedPageIndex = 0;
@@ -117,8 +93,10 @@ class _AppHomeState extends State<AppHome> {
           ),
           backgroundColor: Color(0xff4f8eff),
           foregroundColor: Colors.white,
-          onPressed: () => Navigator.of(context)
-              .push(MaterialPageRoute(builder: (ctx) => CheckIn())),
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => ScanPage()));
+          },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),

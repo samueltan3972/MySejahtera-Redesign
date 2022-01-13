@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:mysj/widgets/custom_view.dart';
-import 'package:mysj/widgets/profile_profile_card.dart';
+import 'package:myselamat/widgets/custom_view.dart';
+import 'package:myselamat/widgets/profile_profile_card.dart';
+//import 'package:myselamat/authentication/welcome.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return CustomView(
         height: MediaQuery.of(context).size.height * 0.5,
         children: <Widget>[
           Container(
-            margin: EdgeInsets.only(top: 10,left: 20),
+            margin: EdgeInsets.only(top: 10, left: 20),
             height: MediaQuery.of(context).size.height * 0.18,
             child: Align(
               alignment: Alignment.topLeft,
@@ -25,9 +31,7 @@ class ProfilePage extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 18.0),
-            child: ProfileCard(
-              riskStatus: 0,
-            ),
+            child: ProfileCard(),
           ),
         ]);
   }

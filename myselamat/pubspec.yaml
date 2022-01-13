@@ -1,5 +1,5 @@
-name: mysj
-description: Unofficial concept design for the MySejahtera app.
+name: myselamat
+description: Redesign of MySejahtera app for UTAR Mini Project Assignment
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.11.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -28,14 +28,25 @@ dependencies:
   dropdown_search: ^0.6.3
   location: ^4.3.0
   google_maps_flutter: ^2.0.6
-  
+  cloud_firestore: ^2.4.0
+  firebase: ^9.0.1
+  firebase_auth: ^2.0.0
+  image_picker: ^0.8.2
+  firebase_storage: ^10.0.1
+  fluttertoast: ^8.0.7
+  provider: ^5.0.0
+  qr_code_scanner: ^0.5.2
+  intl: ^0.17.0
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  firebase: ^9.0.1
+  # firebase: ^9.0.1
   firebase_database: ^7.1.2
+  syncfusion_flutter_datepicker: ^19.2.56
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +64,7 @@ flutter:
     - assets/images/1.jpg
     - assets/images/2.jpg
     - assets/images/profile.jpg
+    - assets/images/background.jpg
 
   # An image asset can refer to one or more resolution specific "variants", see
   # https://flutter.dev/assets and images/#resolution aware.
